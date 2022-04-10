@@ -502,6 +502,7 @@
 // Returns nil when successful, or an error message when one or more keys are unknown.
 - (NSString *)applySettings:(NSDictionary<NSString *, id> *)settings {
   NSMutableArray<NSString *> *unknownKeys = [[NSMutableArray alloc] init];
+  _webView.allowsLinkPreview = false;
   for (NSString *key in settings) {
     if ([key isEqualToString:@"jsMode"]) {
       NSNumber *mode = settings[key];
